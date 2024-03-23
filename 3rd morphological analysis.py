@@ -1,0 +1,18 @@
+import nltk
+nltk.download('punkt')
+nltk.download('wordnet')
+text = "They are running very quickly towards the finish line."
+
+tokens = nltk.word_tokenize(text)
+
+
+stemmer = nltk.PorterStemmer()
+stemmed_words = [stemmer.stem(word) for word in tokens]
+
+
+lemmatizer = nltk.WordNetLemmatizer()
+lemmatized_words = [lemmatizer.lemmatize(word) for word in tokens]
+
+print("Original Text:", text)
+print("\nStemmed Words:", stemmed_words)
+print("\nLemmatized Words:", lemmatized_words)
